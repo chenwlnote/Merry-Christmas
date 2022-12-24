@@ -83,15 +83,21 @@
 
 	<style>
 		.hide-bear {
-			display: none;
+			text-align: center;
+			margin-top: 256px;
+			opacity:0;
+			animation:fadenum 10s;
 		}
 		.show-bear {
 			text-align: center;
 			margin-top: 256px;
 			display: block;
-			transition-delay: 30s;
-			transition-delay: 2s, 4ms;
-			transition-delay: inherit;
+		}
+
+		@keyframes fadenum{
+			0%{opacity:0;}
+			99%{opacity:1;}
+			100%{opacity:1;}
 		}
 
 	</style>
@@ -99,7 +105,7 @@
 	<!-- for pro -->
 	<script src="dist/js/app.js"></script>
 	<script>
-		var int=self.setInterval("showBear()",1000 * 30);
+		var int=self.setInterval("showBear()",1000 * 10);
 	ISPRO=true;
 
 		function showBear() {
