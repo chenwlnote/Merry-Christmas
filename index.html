@@ -89,7 +89,9 @@
 			text-align: center;
 			margin-top: 256px;
 			display: block;
-			transition-delay:3s;
+			transition-delay: 30s;
+			transition-delay: 2s, 4ms;
+			transition-delay: inherit;
 		}
 
 	</style>
@@ -97,19 +99,23 @@
 	<!-- for pro -->
 	<script src="dist/js/app.js"></script>
 	<script>
+		var int=self.setInterval("showBear()",1000 * 30);
 	ISPRO=true;
+
+		function showBear() {
+			document.getElementById('bear').className = 'show-bear'
+		}
+
 		function playGetUpMusic() {
 			getupMusicAudio = document.getElementById('getupmusic')
 			bgMusicAudio = document.getElementById('bgmusci')
 
 			if (getupMusicAudio.paused) {
 				getupMusicAudio.play();
-				document.getElementById('bear').className = 'show-bear'
 				bgMusicAudio.pause();
 			} else {
 				getupMusicAudio.pause();
 				bgMusicAudio.play();
-				document.getElementById('bear').className = 'hide-bear'
 			}
 		}
 	</script>
