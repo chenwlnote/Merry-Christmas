@@ -29,10 +29,13 @@
 			<section class="bigSnow-panel j-bigSnow animate-bigSnowRotate transition">
 				<i class="img-bigSnow snow1 animate-bigSnow1Change transition"></i>
 				<i class="img-bigSnow snow2 animate-bigSnow2Change transition"></i>
-				<i class="img-bigSnow snow3 animate-bigSnow3Change transition"></i>
+				<a href="javascript:;" onclick="playGetUpMusic()">
+					<i class="img-bigSnow snow3 animate-bigSnow3Change transition"></i>
+				</a>
 			</section>
 			<!-- end bigSnow-panel -->
 
+			<a href="javascript:;" onclick="playGetUpMusic()">
 			<div class="banner-panel j-banner opacity0 animated">
 				<!-- animate class show -->
 				<span class="textMask mask1 j-textmask1"><i class="transition"></i></span>
@@ -40,6 +43,7 @@
 				<span class="textMask mask3 j-textmask3"><i class="transition"></i></span>
 				<i class="img-glove animate-gloveSwing"></i>
 			</div>
+			</a>
 
 			<i class="img-tree left opacity0 transition tn j-tree-left"></i>
 			<i class="img-tree right opacity0 transition tn j-tree-right"></i>
@@ -58,7 +62,13 @@
 		<!-- end content -->
 	</section>
 
-	<audio id="bgmusci" preload="load" loop="loop"><source src="main.mp3" type="audio/mpeg" /></audio>
+	<audio id="bgmusci" preload="load" loop="loop">
+		<source src="main.mp3" type="audio/mpeg" />
+	</audio>
+
+	<audio id="getupmusic" preload="load" loop="loop">
+		<source src="getup.mp3" type="audio/mpeg" />
+	</audio>
 
 	<!-- for dev -->
 	<!--<script src="src/js/zepto-min.js"></script>
@@ -69,6 +79,18 @@
 	<script src="dist/js/app.js"></script>
 	<script>
 	ISPRO=true;
+		function playGetUpMusic() {
+			getupMusicAudio = document.getElementById('getupmusic')
+			bgMusicAudio = document.getElementById('bgmusci')
+
+			if (getupMusicAudio.paused) {
+				getupMusicAudio.play();
+				bgMusicAudio.pause();
+			} else {
+				getupMusicAudio.pause();
+				bgMusicAudio.play();
+			}
+		}
 	</script>
 </body>
 </html>
